@@ -51,12 +51,35 @@ public class EventCMD implements CommandExecutor {
 						p.sendMessage("§c§lMauvais Argument de la commande §r- §6/event §r pour l'aide");
 					}
 					
+					
+					if(args[0].equalsIgnoreCase("stop")) {
+						
+						for(Player pls: Bukkit.getServer().getOnlinePlayers()) {
+							if(!pls.hasPermission("event.admin")) {
+								World world = Bukkit.getWorld("world");
+								pls.teleport(new Location(world, 193.453, 63.0, 442.648, 0.1f, 2.5f));
+								pls.sendMessage("§a§l[EVENT] Fin de la partie !");
+								
+							}
+							
+						}
+						
+						
+					}
+					
 				}else {
-					p.sendMessage("§7§m------ §rHelp §r§7§m------");
-					p.sendMessage("§a/start §r --> Permet de demarré le jeu");
-					p.sendMessage("§7§m------ §rHelp §r§7§m------");
+					p.sendMessage("§c§lVous n'avez pas la permission !");
 					
 				}
+				
+				
+				
+		}else {
+			p.sendMessage("§7§m------ §rHelp §r§7§m------"); // Message d'help
+			p.sendMessage("§a/event start §r --> Permet de demarré le jeu.");
+			p.sendMessage("§a/event stop §r --> Arrete le jeu.");
+			p.sendMessage("§7§m------ §rHelp §r§7§m------");
+			
 		}
 					
 					
