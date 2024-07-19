@@ -1,6 +1,7 @@
 package fr.amitron.arena;
 
 import org.bukkit.Bukkit;
+import org.bukkit.GameMode;
 import org.bukkit.Location;
 import org.bukkit.World;
 import org.bukkit.command.Command;
@@ -46,9 +47,6 @@ public class EventCMD implements CommandExecutor {
 						start.runTaskTimer(main, 0, 20); //demarre le timer du pvp
 						
 						
-					}else {
-						
-						p.sendMessage("§c§lMauvais Argument de la commande §r- §6/event §r pour l'aide");
 					}
 					
 					
@@ -59,6 +57,8 @@ public class EventCMD implements CommandExecutor {
 								World world = Bukkit.getWorld("world");
 								pls.teleport(new Location(world, 193.453, 63.0, 442.648, 0.1f, 2.5f));
 								pls.sendMessage("§a§l[EVENT] Fin de la partie !");
+								pls.getInventory().clear();
+								pls.setGameMode(GameMode.ADVENTURE);
 								
 							}
 							
@@ -69,6 +69,12 @@ public class EventCMD implements CommandExecutor {
 					
 				}else {
 					p.sendMessage("§c§lVous n'avez pas la permission !");
+					
+				}
+				
+				if(!args[0].equalsIgnoreCase("start") && !args[0].equalsIgnoreCase("stop")) {
+					
+					p.sendMessage("§c§lMauvais Argument de la commande §r- §6/event §r pour l'aide");
 					
 				}
 				
