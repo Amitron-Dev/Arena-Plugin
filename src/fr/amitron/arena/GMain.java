@@ -10,7 +10,7 @@ public class GMain extends JavaPlugin{
 	@Override
 	public void onEnable() {
 		System.out.println("§Arena Plugin");
-		getCommand("event").setExecutor(new EventCMD());
+		getCommand("event").setExecutor(new EventCMD(this));
 		Bukkit.getPluginManager().registerEvents(new Listeners(), this);
 	}
 
