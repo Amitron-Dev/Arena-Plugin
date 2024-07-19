@@ -68,6 +68,10 @@ public class GStart1 extends BukkitRunnable implements Listener{
 					egapplemeta.setDisplayName("§e§lLa Pomme Ultra Magique");
 					egapple.setItemMeta(egapplemeta);
 					pls.getInventory().addItem(egapple);
+					ItemStack steak = new ItemStack(Material.COOKED_BEEF, 64);
+					ItemMeta steakmeta = steak.getItemMeta();
+					steakmeta.setDisplayName("§6Le Steak Ultime");
+					steakmeta.setLore(Arrays.asList("&eLe steak ultime vous propose une experience", "§ede dégustation incroyable"));
 					
 				}
 				noPvpPlayers.clear();
