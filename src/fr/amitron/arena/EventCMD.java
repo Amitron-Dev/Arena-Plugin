@@ -32,16 +32,15 @@ public class EventCMD implements CommandExecutor {
 					// Etape 2 -> desactivé le pvp et faire un conteur de 10 secondes pour les laisser s'échappé du centre
 					// Etape 3 -> a la fin du décompte, actié le pvp.
 					
-					if(!p.hasPermission("event.admin")) {
-						World world = Bukkit.getWorld("world");
-						p.teleport(new Location(world, 248.496, 111.0, 356.475, -89.7f, 0.8f)); //tp dans l'arene
+					for(Player pls: Bukkit.getServer().getOnlinePlayers()) {
 						
-						GStart1 start = new GStart1(main);
-						start.runTaskTimer(main, 0, 20);
-						
-						
-						
+						if(!pls.hasPermission("event.admin")) {
+							World world = Bukkit.getWorld("world");
+							pls.teleport(new Location(world, 248.496, 111.0, 356.475, -89.7f, 0.8f)); //tp dans l'arene
+						}
 					}
+					GStart1 start = new GStart1(main);
+					start.runTaskTimer(main, 0, 20);
 					
 					
 				}
