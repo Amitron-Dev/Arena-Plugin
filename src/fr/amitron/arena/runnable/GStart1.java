@@ -42,7 +42,7 @@ public class GStart1 extends BukkitRunnable implements Listener{
 		
 		if(timer == 0) {
 			Bukkit.broadcastMessage("§c§l[EVENT] Le pvp est maintenant activé !");
-			for(Player pls: Bukkit.getServer().getOnlinePlayers()) {
+			for(Player pls: Bukkit.getServer().getOnlinePlayers()) { 
 				if(!pls.hasPermission("event.admin")) {
 					pls.setGameMode(GameMode.SURVIVAL);
 					pls.sendMessage("§r");
@@ -54,7 +54,7 @@ public class GStart1 extends BukkitRunnable implements Listener{
 					swordmeta.setLore(Arrays.asList("§eCette épée est ultra méga puissante pour", "§etué tout vos ennemis"));
 					sword.setItemMeta(swordmeta);
 					pls.getInventory().addItem(sword);
-					pls.getInventory().addItem(new ItemStack(Material.IRON_HELMET, 1));
+					pls.getInventory().addItem(new ItemStack(Material.IRON_HELMET, 1)); //give de l'armure
 					pls.getInventory().addItem(new ItemStack(Material.IRON_CHESTPLATE, 1));
 					pls.getInventory().addItem(new ItemStack(Material.CHAINMAIL_BOOTS, 1));
 					pls.getInventory().addItem(new ItemStack(Material.LEATHER_LEGGINGS, 1));
@@ -70,7 +70,7 @@ public class GStart1 extends BukkitRunnable implements Listener{
 					pls.getInventory().addItem(egapple);
 					ItemStack steak = new ItemStack(Material.COOKED_BEEF, 64);
 					ItemMeta steakmeta = steak.getItemMeta();
-					steakmeta.setDisplayName("§6Le Steak Ultime");
+					steakmeta.setDisplayName("§6§lLe Steak Ultime");
 					steakmeta.setLore(Arrays.asList("&eLe steak ultime vous propose une experience", "§ede dégustation incroyable"));
 					
 				}
