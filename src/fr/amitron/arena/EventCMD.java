@@ -26,28 +26,44 @@ public class EventCMD implements CommandExecutor {
 		
 		if(p != null && p.isOnline()) {
 			if(args.length == 1) {
-				if(args[0].equalsIgnoreCase("start")) {
+				if(p.hasPermission("event.use")) {
 					
-					// Etape 1 -> tp les joueurs dans l'arene. (meme position pour tout le monde)
-					// Etape 2 -> desactivé le pvp et faire un conteur de 10 secondes pour les laisser s'échappé du centre
-					// Etape 3 -> a la fin du décompte, actié le pvp.
-					
-					for(Player pls: Bukkit.getServer().getOnlinePlayers()) {
+					if(args[0].equalsIgnoreCase("start")) {
 						
-						if(!pls.hasPermission("event.admin")) {
-							World world = Bukkit.getWorld("world");
-							pls.teleport(new Location(world, 248.496, 111.0, 356.475, -89.7f, 0.8f)); //tp dans l'arene
+						// Etape 1 -> tp les joueurs dans l'arene. (meme position pour tout le monde)
+						// Etape 2 -> desactivé le pvp et faire un conteur de 10 secondes pour les laisser s'échappé du centre
+						// Etape 3 -> a la fin du décompte, activé le pvp.
+						
+						
+						for(Player pls: Bukkit.getServer().getOnlinePlayers()) {
+							
+							if(!pls.hasPermission("event.admin")) {
+								World world = Bukkit.getWorld("world");
+								pls.teleport(new Location(world, 248.496, 111.0, 356.475, -89.7f, 0.8f)); //tp dans l'arene
+							}
 						}
+						GStart1 start = new GStart1(main);
+						start.runTaskTimer(main, 0, 20); //demarre le timer du pvp
+						
+						
+					}else {
+						
+						p.sendMessage("§c§lMauvais Argument de la commande §r- §6/event §r pour l'aide");
 					}
-					GStart1 start = new GStart1(main);
-					start.runTaskTimer(main, 0, 20);
 					
+				}else {
+					p.sendMessage("§7§m------ §rHelp §r§7§m------");
+					p.sendMessage("§a/start §r --> Permet de demarré le jeu");
+					p.sendMessage("§7§m------ §rHelp §r§7§m------");
 					
 				}
-				
-			}
-			
 		}
+					
+					
+}
+				
+			
+
 		
 		
 		

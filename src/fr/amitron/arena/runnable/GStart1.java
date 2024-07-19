@@ -49,13 +49,23 @@ public class GStart1 extends BukkitRunnable implements Listener{
 					ItemStack sword = new ItemStack(Material.IRON_SWORD, 1);
 					ItemMeta swordmeta = sword.getItemMeta();
 					swordmeta.setDisplayName("§a§lEpee de la mort qui tue");
-					swordmeta.setLore(Arrays.asList("§eCette épeé est ultra méga puissante pour", "§etué tout vos ennemis"));
+					swordmeta.setLore(Arrays.asList("§eCette épée est ultra méga puissante pour", "§etué tout vos ennemis"));
 					sword.setItemMeta(swordmeta);
 					pls.getInventory().addItem(sword);
 					pls.getInventory().addItem(new ItemStack(Material.IRON_HELMET, 1));
 					pls.getInventory().addItem(new ItemStack(Material.IRON_CHESTPLATE, 1));
 					pls.getInventory().addItem(new ItemStack(Material.CHAINMAIL_BOOTS, 1));
 					pls.getInventory().addItem(new ItemStack(Material.LEATHER_LEGGINGS, 1));
+					ItemStack gapple = new ItemStack(Material.GOLDEN_APPLE, 5);
+					ItemMeta gapplemeta = gapple.getItemMeta();
+					gapplemeta.setDisplayName("§eLa Pomme Magique");
+					gapple.setItemMeta(gapplemeta);
+					pls.getInventory().addItem(gapple);
+					ItemStack egapple = new ItemStack(Material.ENCHANTED_GOLDEN_APPLE, 2);
+					ItemMeta egapplemeta = egapple.getItemMeta();
+					egapplemeta.setDisplayName("§e§lLa Pomme Ultra Magique");
+					egapple.setItemMeta(egapplemeta);
+					pls.getInventory().addItem(egapple);
 					
 				}
 				noPvpPlayers.clear();
