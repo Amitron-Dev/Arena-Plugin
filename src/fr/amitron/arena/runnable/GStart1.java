@@ -1,13 +1,17 @@
 package fr.amitron.arena.runnable;
 
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
 import org.bukkit.Bukkit;
+import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
+import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.scheduler.BukkitRunnable;
 
 import fr.amitron.arena.GMain;
@@ -39,7 +43,19 @@ public class GStart1 extends BukkitRunnable implements Listener{
 			Bukkit.broadcastMessage("§c§l[EVENT] Le pvp est maintenant activé !");
 			for(Player pls: Bukkit.getServer().getOnlinePlayers()) {
 				if(!pls.hasPermission("event.admin")) {
-					pls.getInventory().addItem(new ItemStack())
+					pls.sendMessage("§r");
+					pls.sendMessage("§a§l[EVENT] §r§aVoici votre stuff, pensez a équipez votre armure! ");
+					pls.sendMessage("§r");
+					ItemStack sword = new ItemStack(Material.IRON_SWORD, 1);
+					ItemMeta swordmeta = sword.getItemMeta();
+					swordmeta.setDisplayName("§a§lEpee de la mort qui tue");
+					swordmeta.setLore(Arrays.asList("§eCette épeé est ultra méga puissante pour", "§etué tout vos ennemis"));
+					sword.setItemMeta(swordmeta);
+					pls.getInventory().addItem(sword);
+					pls.getInventory().addItem(new ItemStack(Material.IRON_HELMET, 1));
+					pls.getInventory().addItem(new ItemStack(Material.IRON_CHESTPLATE, 1));
+					pls.getInventory().addItem(new ItemStack(Material.CHAINMAIL_BOOTS, 1));
+					pls.getInventory().addItem(new ItemStack(Material.LEATHER_LEGGINGS, 1));
 					
 				}
 				noPvpPlayers.clear();
