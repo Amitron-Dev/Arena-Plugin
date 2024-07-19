@@ -3,3 +3,6 @@ version: "1.0"
 api: Spigot
 api-version: "1.13"
 main: fr.amitron.arena.GMain
+commands:
+  event:
+    description: Paramétrage de l'event
