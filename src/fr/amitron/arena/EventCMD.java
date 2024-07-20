@@ -69,12 +69,21 @@ public class EventCMD implements CommandExecutor {
 						
 					}
 					
+					if(args[0].equalsIgnoreCase("tparene")) {
+						if(p.hasPermission("event.tpadmin")) {
+							World world = Bukkit.getWorld("world");
+							p.teleport(new Location(world, 248.496, 111.0, 356.475, -89.7f, 0.8f)); //tp dans l'arene
+							
+						}
+						
+					}
+					
 				}else {
 					p.sendMessage("§c§lVous n'avez pas la permission !");
 					
 				}
 				
-				if(!args[0].equalsIgnoreCase("start") && !args[0].equalsIgnoreCase("stop")) {
+				if(!args[0].equalsIgnoreCase("start") && !args[0].equalsIgnoreCase("stop") && !args[0].equalsIgnoreCase("tparene")) {
 					
 					p.sendMessage("§c§lMauvais Argument de la commande §r- §6/event §r pour l'aide");
 					
@@ -86,6 +95,7 @@ public class EventCMD implements CommandExecutor {
 			p.sendMessage("§7§m------ §rHelp §r§7§m------"); // Message d'help
 			p.sendMessage("§a/event start §r --> Permet de demarré le jeu.");
 			p.sendMessage("§a/event stop §r --> Arrete le jeu.");
+			p.sendMessage("§a/event tparene §r --> Teleportation a l'arene");
 			p.sendMessage("§7§m------ §rHelp §r§7§m------");
 			
 		}
