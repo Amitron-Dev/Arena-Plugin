@@ -63,10 +63,10 @@ public class EventCMD implements CommandExecutor {
                         if (!main.isState(GState.WAITING)) {
 
                             for (Player pls : Bukkit.getServer().getOnlinePlayers()) {
+                            	pls.sendMessage("§a§l[EVENT] Fin de la partie !");
                                 if (!pls.hasPermission("event.admin")) {
                                     World world = Bukkit.getWorld("world");
                                     pls.teleport(new Location(world, 193.453, 63.0, 442.648, 0.1f, 2.5f));
-                                    pls.sendMessage("§a§l[EVENT] Fin de la partie !");
                                     pls.getInventory().clear();
                                     pls.setGameMode(GameMode.ADVENTURE);
                                     pls.setLevel(0);
