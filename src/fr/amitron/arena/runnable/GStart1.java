@@ -74,6 +74,8 @@ public class GStart1 extends BukkitRunnable implements Listener{
 					ItemMeta steakmeta = steak.getItemMeta();
 					steakmeta.setDisplayName("§6§lLe Steak Ultime");
 					steakmeta.setLore(Arrays.asList("&eLe steak ultime vous propose une experience", "§ede dégustation incroyable"));
+					steak.setItemMeta(steakmeta);
+					pls.getInventory().addItem(steak);
 					
 				}
 				noPvpPlayers.clear();
