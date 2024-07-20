@@ -16,7 +16,7 @@ public class Listeners implements Listener {
 	public void OnJoin(PlayerJoinEvent e) {
 		Player p = e.getPlayer();
 		
-		e.setJoinMessage("§aLe joueur " + p.getName() + " a rejoint le serveur !");
+		
 		p.sendMessage("§r§o---------------------------");
 		p.sendMessage("§&§lBienvenue sur L'event !");
 		p.sendMessage("§r§o---------------------------");
@@ -29,13 +29,14 @@ public class Listeners implements Listener {
 		if(p.hasPermission("event.admin")) {
 			p.sendMessage("§4§lVous êtes admin.");
 			p.setGameMode(GameMode.CREATIVE);
+			e.setJoinMessage("§4§lL'administrateur " + p.getName() + " a rejoint le serveur.");
 			
 		}
 		
 		if(!p.hasPermission("event.admin")) {
 			p.setGameMode(GameMode.ADVENTURE);
 			p.getInventory().clear();
-			
+			e.setJoinMessage("§aLe joueur " + p.getName() + " a rejoint le serveur !");
 		}
 		
 	}
