@@ -59,7 +59,9 @@ public class EventCMD implements CommandExecutor {
 								pls.sendMessage("§a§l[EVENT] Fin de la partie !");
 								pls.getInventory().clear();
 								pls.setGameMode(GameMode.ADVENTURE);
-								
+								pls.setLevel(0);
+								pls.setHealth(20);
+								pls.setFoodLevel(20);
 							}
 							
 						}

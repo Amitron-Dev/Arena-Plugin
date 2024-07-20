@@ -24,6 +24,8 @@ public class Listeners implements Listener {
 		p.teleport(new Location(world, 193.453, 63.0, 442.648, 0.1f, 2.5f));
 		p.setFoodLevel(20);
 		p.setHealth(20);
+		p.setLevel(0);
+
 		
 		
 		if(p.hasPermission("event.admin")) {
