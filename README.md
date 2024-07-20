@@ -10,3 +10,4 @@ Lors du /event start, les administrateurs ne seront pas téléportés dans l'ar�
 - [ ] Revoir le system d'administration
 - [ ] Revoir les messages
 - [ ] Revoir les téléportations
+- [ ] Commande Admin pour se tp plus facilement a l'arene ou au spawn
