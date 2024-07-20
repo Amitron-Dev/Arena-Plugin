@@ -16,6 +16,7 @@ import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.scheduler.BukkitRunnable;
 
 import fr.amitron.arena.GMain;
+import fr.amitron.arena.enumeration.GState;
 
 public class GStart1 extends BukkitRunnable implements Listener{
 
@@ -42,6 +43,7 @@ public class GStart1 extends BukkitRunnable implements Listener{
 		
 		if(timer == 0) {
 			Bukkit.broadcastMessage("§c§l[EVENT] Le pvp est maintenant activé !");
+			main.setState(GState.PVP);
 			for(Player pls: Bukkit.getServer().getOnlinePlayers()) { 
 				if(!pls.hasPermission("event.admin")) {
 					pls.setGameMode(GameMode.SURVIVAL);
